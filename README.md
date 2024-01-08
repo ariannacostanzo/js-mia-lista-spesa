@@ -1,0 +1,1 @@
+Voglio costruire una lista della spesa, in cui posso eliminare gli elementi e aggiungerne di altri
