@@ -17,7 +17,7 @@ ul li {
     padding: .5rem 0;
     font-size: 1.5rem;
     text-transform: capitalize;
-    
+    cursor: pointer;
     
 }
 
@@ -79,7 +79,7 @@ ul li {
 }
 
 #new-element:focus-within {
-    outline: 0;
+    outline: 1px solid rgb(29, 89, 145);
 }
 
 
@@ -135,6 +135,10 @@ ul li {
 
 #add:active {
     padding-bottom: 10px;
+}
+
+#add:focus-within {
+    outline: 1px solid rgb(29, 89, 145);
 }
 
 
