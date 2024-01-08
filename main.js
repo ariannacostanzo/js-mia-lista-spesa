@@ -20,18 +20,16 @@ addButton.addEventListener('click', function() {
     
     // * Ciclo for
 
-
     for (let i = 0; i < shoppingItems.length; i++) {
             message += `<li>${shoppingItems[i]}<li><hr>`
         }
         
     console.log(shoppingItems)
-
-
     message += '<ul>'
 
     listContainerElement.innerHTML = message;
 
+    // * Svuoto il campo ed imposto il focus appena premo il button
     itemToAddElement.value = ''
     itemToAddElement.focus();
 });
