@@ -14,7 +14,7 @@ addButton.addEventListener('click', function() {
 
     // ! Validatore
 
-    if (itemToAdd) {
+    if (itemToAdd && !shoppingItems.includes(itemToAdd)) {
         shoppingItems.push(itemToAdd);
     }
     
