@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+/* Utils */
+
+.deleted {
+    text-decoration: line-through;
+}
 
 body {
     background-image: url(./images/bg.jpg);
