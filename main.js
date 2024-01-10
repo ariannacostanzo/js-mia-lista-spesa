@@ -19,6 +19,14 @@ function createListElement (content, container) {
     return listElement;
 }
 
+function clickLeftMouse () {
+    return event.button == 0;
+};
+
+function clickRightMouse () {
+    return event.button == 2;
+};
+
 
 addButton.addEventListener('click', function() {
     
@@ -28,14 +36,12 @@ addButton.addEventListener('click', function() {
     //creo una nuova li, che ha come contenuto il valore dell'input e si appende a ul
     const newListElement = createListElement(itemToAdd, listContainerElement)
     
-    
-   
 
     //al click sinistro l'elemento è tagliato(toggle), al click destro è eliminato
     newListElement.addEventListener('mousedown', event => {
-        if (event.button == 0) {
+        if (clickLeftMouse()) {
             newListElement.classList.toggle('deleted');
-        } else if (event.button == 2) {
+        } else if (clickRightMouse()) {
             newListElement.parentNode.removeChild(newListElement);
         }
     });
@@ -52,18 +58,8 @@ addButton.addEventListener('click', function() {
     itemToAddElement.focus();
 });
 
+
 // todo conservare i dati per la prossima volta che si apre la pagina
-
-
-//al click l'elemento è tagliato, se è gia tagliato viene recuperato
-    // newListElement.addEventListener('click', () => {
-    //     newListElement.classList.toggle('deleted');
-    // });
-
-    //al click destro l'elemento viene totalmente eliminato
-    // newListElement.addEventListener('click', () => {
-    //     newListElement.parentNode.removeChild(newListElement);
-    // });
 
 
 // ? Vecchio codice che aveva un array che ora non mi serve più
