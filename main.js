@@ -28,10 +28,24 @@ addButton.addEventListener('click', function() {
     //creo una nuova li, che ha come contenuto il valore dell'input e si appende a ul
     const newListElement = createListElement(itemToAdd, listContainerElement)
     
-    //al click l'elemento è tagliato, se è gia tagliato viene recuperato
-    newListElement.addEventListener('click', () => {
-        newListElement.classList.toggle('deleted');
+    
+   
+
+    //al click sinistro l'elemento è tagliato(toggle), al click destro è eliminato
+    newListElement.addEventListener('mousedown', event => {
+        if (event.button == 0) {
+            newListElement.classList.toggle('deleted');
+        } else if (event.button == 2) {
+            newListElement.parentNode.removeChild(newListElement);
+        }
     });
+    
+    
+    //impedisco che al click destro si apra la finestra della pagina web nel container
+    listContainerElement.addEventListener('contextmenu', event => {
+        event.preventDefault();
+    });
+    
 
     // Svuoto il campo ed imposto il focus appena premo il button
     itemToAddElement.value = ''
@@ -40,6 +54,16 @@ addButton.addEventListener('click', function() {
 
 // todo conservare i dati per la prossima volta che si apre la pagina
 
+
+//al click l'elemento è tagliato, se è gia tagliato viene recuperato
+    // newListElement.addEventListener('click', () => {
+    //     newListElement.classList.toggle('deleted');
+    // });
+
+    //al click destro l'elemento viene totalmente eliminato
+    // newListElement.addEventListener('click', () => {
+    //     newListElement.parentNode.removeChild(newListElement);
+    // });
 
 
 // ? Vecchio codice che aveva un array che ora non mi serve più
